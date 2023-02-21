@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images\1.jpeg" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://omarhamonline.com/public/assets/css/vendors.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://omarhamonline.com/public/assets/css/aiz-core.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://omarhamonline.com/public/assets/css/custom-style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css"
+      integrity="sha512-YTuMx+CIxXa1l+j5aDPm98KFbVcYFNhlr2Auha3pwjHCF1lLbY9/ITQQlsUzdM1scW45kHC5KNib4mNa1IFvJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--whatsapp Style of the plugin -->
+    <link
+      rel="stylesheet"
+      href="https://omarhamonline.com/public/assets/pluginwp/whatsapp-chat-support.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://omarhamonline.com/public/assets/pluginwp/components/Font Awesome/css/font-awesome.min.css"
+    />
+    <!-- whatsapp Style of the plugin
+    <script>
+      var AIZ = AIZ || {};
+      AIZ.local = {
+        nothing_selected: "Nothing selected",
+        nothing_found: "Nothing found",
+        choose_file: "Choose file",
+        file_selected: "File selected",
+        files_selected: "Files selected",
+        add_more_files: "Add more files",
+        adding_more_files: "Adding more files",
+        drop_files_here_paste_or: "Drop files here, paste or",
+        browse: "Browse",
+        upload_complete: "Upload complete",
+        upload_paused: "Upload paused",
+        resume_upload: "Resume upload",
+        pause_upload: "Pause upload",
+        retry_upload: "Retry upload",
+        cancel_upload: "Cancel upload",
+        uploading: "Uploading",
+        processing: "Processing",
+        complete: "Complete",
+        file: "File",
+        files: "Files",
+      };
+    </script> -->
+</head>
+<body>
+    <div class="whatsapp_chat_support wcs_fixed_right" id="example_3">
+        <div class="wcs_button_label">Questions? Let's Chat</div>
+        <div class="wcs_button wcs_button_circle">
+            <!-- <div><img src="images\WhatsappLogo.png" width="50px" alt=""></div> -->
+          <span class="fa fa-whatsapp"></span>
+        </div>
+
+        <div class="wcs_popup">
+          <div class="wcs_popup_close">
+            <span class="fa fa-close"></span>
+          </div>
+          <div class="wcs_popup_header">
+            <strong>Need Help? Chat with us</strong>
+            <br />
+            <div class="wcs_popup_header_description">
+              Click one of our representatives below
+            </div>
+          </div>
+          <div class="wcs_popup_person_container">
+            <div class="wcs_popup_person" data-number="+918655103793">
+              <div class="wcs_popup_person_img">
+                <img
+                  src="https://omarhamonline.com/public/assets/pluginwp/img/person_2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="wcs_popup_person_content">
+                <div class="wcs_popup_person_name">Om Arham Online</div>
+                <div class="wcs_popup_person_description">Support</div>
+                <div class="wcs_popup_person_status">I'm Online</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://omarhamonline.com/public/assets/js/vendors.js"></script>
+    <script src="https://omarhamonline.com/public/assets/js/aiz-core.js"></script>
+
+    <!-- whatsapp chat bot -->
+    <!-- jQuery 1.8+ -->
+    <!--<script src="https://omarhamonline.com/public/assets/pluginwp/components/jQuery/jquery-1.11.3.min.js"></script>-->
+
+    <!-- Plugin JS file -->
+    <script src="https://omarhamonline.com/public/assets/pluginwp/components/moment/moment.min.js"></script>
+    <script src="https://omarhamonline.com/public/assets/pluginwp/components/moment/moment-timezone-with-data.min.js"></script>
+    <script src="https://omarhamonline.com/public/assets/pluginwp/whatsapp-chat-support.js"></script>
+
+    <script>
+      $("#example_3").whatsappChatSupport();
+    </script>
+    <!-- whatsapp chat bot -->
+    <script>
+
+        $(document).ready(function () {
+                $(".category-nav-element").each(function (i, el) {
+                $(el).on("mouseover", function () {
+                    if (!$(el).find(".sub-cat-menu").hasClass("loaded")) {
+                    $.post(
+                        "https://omarhamonline.com/category/nav-element-list",
+                        { _token: AIZ.data.csrf, id: $(el).data("id") },
+                        function (data) {
+                        $(el).find(".sub-cat-menu").addClass("loaded").html(data);
+                        }
+                    );
+                    }
+                });
+                });
+
+    </script>
+
+</body>
+</html>
